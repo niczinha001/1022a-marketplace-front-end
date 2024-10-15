@@ -12,7 +12,7 @@ function App() {
   const [produtos, setProdutos] = useState<ProdutoType []>([])
   //useEffects(O que fazer, quando Fazer) []=> Hora do carregamento da página
   useEffect(() => {
-    setNome("Nicolle Santana")
+    setNome("Nicolle Santana Ferreira")
     //Buscar os dados do BackENd
     fetch("https://one022a-marketplace-w7lt.onrender.com/produtos")
       .then(resposta => resposta.json())
@@ -29,7 +29,9 @@ function App() {
             return (
               <div key={produto.id} className="produto-item">
                 <h1>{produto.nome}</h1>
+                <div className="container-imagem">
                 <img src={produto.imagem} alt="Imagem do celular" />
+                </div>
                 <p>{produto.preco}</p>
                 <p>{produto.descricao}</p>
               </div>
